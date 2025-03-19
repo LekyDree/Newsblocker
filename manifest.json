@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+  
+    "name": "Element Remover",
+    "description": "Removes elements from a page.",
+    "version": "1.0",
+    "permissions": [
+        "scripting",
+        "storage",
+        "tabs",
+        "activeTab"
+    ],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "128": "icon128.png"
+    },
+    "content_scripts": [
+    {
+        "matches": ["https://news.google.com/*"],
+        "js": ["contentScript.js"],
+        "run_at": "document_start"
+    }
+]
+}
