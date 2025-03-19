@@ -32,17 +32,22 @@ document.addEventListener("DOMContentLoaded", () => {
   clearTab();
 });
 
-function clearTab() {
-  console.log("2");
-  //chrome.storage.sync.get(["blockedKeywords"], function (data) {
-  //const blockedKeywords = data.blockedKeywords || ["trump"];
-  let blockedKeywords = ["trump", "elon", "putin"];
+let intervalId = null;
 
-  removeElements(blockedKeywords);
-  //});
+function clearTab() {
+  try {
+    chrome.storage.sync.get("blockedKeywords", function (data) {
+      const blockedKeywords = data.blockedKeywords || [];
+      console.log(blockedKeywords);
+      removeElements(blockedKeywords);
+    });
+  } catch (error) {
+    console.log("stopped");
+    clearInterval(intervalId);
+    intervalId = null;
+  }
 }
 
-setInterval(() => {
-  console.log("4");
+intervalId = setInterval(() => {
   clearTab();
 }, 1000);
