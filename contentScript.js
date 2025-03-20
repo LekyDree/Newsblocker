@@ -2,7 +2,7 @@ console.log("Content script loaded!");
 
 function removeElements(keywords) {
   console.log("5");
-  document.querySelectorAll(".PO9Zff, article").forEach((element) => {
+  document.querySelectorAll("article").forEach((element) => {
     let text = element.textContent.toLowerCase();
     if (keywords.some((keyword) => text.includes(keyword.toLowerCase()))) {
       let blockText = document.createElement("div");
@@ -50,4 +50,4 @@ function clearTab() {
 
 intervalId = setInterval(() => {
   clearTab();
-}, 1000);
+}, 500);

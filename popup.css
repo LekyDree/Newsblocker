@@ -1,7 +1,7 @@
 body {
     width: 250px;
     font-family: Arial, sans-serif;
-    padding-top: 15px;
+    padding-top: 5px;
     margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -16,14 +16,14 @@ body {
 }
 
 #logo {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
     margin-right: 10px;
 }
 
 #name {
     font-weight: bold;
-    font-size: large;
+    font-size: 18px;
     margin-left: 5px;
 }
 
@@ -82,14 +82,14 @@ ul {
 li {
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between text and button */
+    gap: 6px; /* Space between text and button */
     margin: 5px;
 }
 
 .listText {
     background-color: white; /* Softer friendly color */
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: 4px;
     font-size: 13px;
     font-weight: bold;
     min-width: 50px;
